@@ -36,7 +36,7 @@
             padding: 2rem;
             position: relative;
         }
-        
+
         .hero {
             background-color: rgba(255, 255, 255, 0.7);
             text-align: center;
@@ -44,7 +44,6 @@
         
         .hero h1 {
             font-size: 9vw;
-            color: #888;
             letter-spacing: 0.05em;
             font-weight: 400;
             margin-bottom: 1rem;
@@ -52,16 +51,26 @@
             text-transform: lowercase;
         }
         
-        .hero h1::before {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #888;
-            top: 20%;
-            left: 50%;
-            transform: translate(-10px, 0);
+        .hero .anx {
+            color: #888;
+        }
+        
+        .hero .i {
+            color: #888;
+            position: relative;
+            display: inline-block;
+            font-family: 'Comic Sans MS', cursive;
+            transform: rotate(-5deg);
+            animation: wiggle 3s ease-in-out infinite;
+        }
+        
+        .hero .etee {
+            color: #bbb;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
         }
         
         .hero h2 {
@@ -70,7 +79,7 @@
             font-weight: 300;
             font-style: italic;
         }
-            
+ 
         .mission {
             padding: 4rem 2rem;
             background-color: white;
@@ -91,7 +100,7 @@
             color: #666;
             margin-bottom: 1rem;
         }
-        
+
         .team {
             background-color: #f8f8f8;
         }
@@ -140,7 +149,7 @@
             font-weight: bold;
             color: #888;
         }
-        
+
         .nav {
             position: fixed;
             bottom: 2rem;
@@ -203,7 +212,7 @@
                 transform: translateY(-7px) translateX(-50%);
             }
         }
-        
+  
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 18vw;
@@ -234,14 +243,15 @@
     </style>
 </head>
 <body>
+
     <div class="nav">
         <a href="#hero" class="active"></a>
         <a href="#mission"></a>
         <a href="#team"></a>
     </div>
-    
+ 
     <section id="hero" class="hero">
-        <h1>anxietee</h1>
+        <h1><span class="anx">anx</span><span class="i">i</span><span class="etee">etee</span></h1>
         <h2>comfort that builds confidence</h2>
         
         <div class="scroll-indicator" id="scrollToMission">
@@ -249,7 +259,7 @@
             <div class="scroll-arrow"></div>
         </div>
     </section>
-    
+
     <section id="mission" class="mission">
         <h2>Our Mission</h2>
         <p>At anxietee, we believe in creating more than just clothing. We design experiences that empower individuals to overcome their anxieties and embrace their authentic selves.</p>
@@ -261,10 +271,11 @@
             <div class="scroll-arrow"></div>
         </div>
     </section>
- 
+
     <section id="team" class="team">
         <h2>Our Team</h2>
         <div class="team-container">
+
             <div class="team-member">
                 <h3>Name</h3>
                 <p class="position">Position</p>
@@ -304,7 +315,7 @@
             document.getElementById('scrollToTeam').addEventListener('click', function() {
                 document.getElementById('team').scrollIntoView({ behavior: 'smooth' });
             });
-            
+        
             window.addEventListener('scroll', function() {
                 const scrollPosition = window.scrollY;
                 const sections = document.querySelectorAll('section');
