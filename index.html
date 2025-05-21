@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anxietee - comfort that builds confidence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #f7f7f7;
+            background-image: linear-gradient(45deg, #eee 25%, transparent 25%), 
+                              linear-gradient(-45deg, #eee 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #eee 75%), 
+                              linear-gradient(-45deg, transparent 75%, #eee 75%);
+            background-size: 40px 40px;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero {
+            background-color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 9vw;
+            color: #888;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            position: relative;
+            text-transform: lowercase;
+        }
+        
+        .hero h1::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #888;
+            top: 20%;
+            left: 50%;
+            transform: translate(-10px, 0);
+        }
+        
+        .hero h2 {
+            font-size: 2vw;
+            color: #333;
+            font-weight: 300;
+            font-style: italic;
+        }
+            
+        .mission {
+            padding: 4rem 2rem;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        .mission h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .mission p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            line-height: 1.8;
+            text-align: center;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .team {
+            background-color: #f8f8f8;
+        }
+        
+        .team h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #555;
+        }
+        
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+        }
+        
+        .team-member {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+        
+        .team-member p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member .position {
+            font-weight: bold;
+            color: #888;
+        }
+        
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 100;
+        }
+        
+        .nav a {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .nav a.active, .nav a:hover {
+            background-color: rgba(0,0,0,0.5);
+            transform: scale(1.2);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: #888;
+        }
+        
+        .scroll-indicator span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border-right: 3px solid #888;
+            border-bottom: 3px solid #888;
+            transform: rotate(45deg);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-15px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-7px) translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 18vw;
+            }
+            
+            .hero h2 {
+                font-size: 5vw;
+            }
+            
+            .mission h2, .team h2 {
+                font-size: 2rem;
+            }
+            
+            .mission p {
+                font-size: 1rem;
+            }
+            
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .team-member {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#hero" class="active"></a>
+        <a href="#mission"></a>
+        <a href="#team"></a>
+    </div>
+    
+    <section id="hero" class="hero">
+        <h1>anxietee</h1>
+        <h2>comfort that builds confidence</h2>
+        
+        <div class="scroll-indicator" id="scrollToMission">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+    
+    <section id="mission" class="mission">
+        <h2>Our Mission</h2>
+        <p>At anxietee, we believe in creating more than just clothing. We design experiences that empower individuals to overcome their anxieties and embrace their authentic selves.</p>
+        <p>Through thoughtful design and innovative fabrics, we provide comfort that truly builds confidence, allowing you to face life's challenges with renewed strength and security.</p>
+        <p>Our products are crafted with care, understanding, and a deep commitment to mental wellbeing because we know that what you wear affects how you feel.</p>
+        
+        <div class="scroll-indicator" id="scrollToTeam">
+            <span>Meet Our Team</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+ 
+    <section id="team" class="team">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <h3>Name</h3>
+                <p class="position">Position</p>
+                <p class="affiliation">Affiliation</p>
+            </div>
+            
+            <div class="team-member">
+                <h3>Name</h3>
+                <p class="position">Position</p>
+                <p class="affiliation">Affiliation</p>
+            </div>
+            
+            <div class="team-member">
+                <h3>Name</h3>
+                <p class="position">Position</p>
+                <p class="affiliation">Affiliation</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            document.getElementById('scrollToMission').addEventListener('click', function() {
+                document.getElementById('mission').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            document.getElementById('scrollToTeam').addEventListener('click', function() {
+                document.getElementById('team').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach((section, index) => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        navLinks[index].classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
