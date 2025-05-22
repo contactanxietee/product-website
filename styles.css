@@ -147,6 +147,78 @@ section {
     font-weight: bold;
     color: #888;
 }
+.contact {
+    background-color: #f0f0f0;
+    padding: 4rem 2rem;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.contact p {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #40e0d0;
+    box-shadow: 0 0 0 3px rgba(64, 224, 208, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #9b59b6, #663399);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
 
 .nav {
     position: fixed;
