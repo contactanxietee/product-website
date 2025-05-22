@@ -11,6 +11,7 @@
         <a href="#hero" class="active"></a>
         <a href="#mission"></a>
         <a href="#team"></a>
+        <a href="#contact"></a>
     </div>
  
     <section id="hero" class="hero">
@@ -70,7 +71,30 @@
             </div>
         </div>
     </section>
-    
+        <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Have questions or want to learn more about anxietee? We'd love to hear from you.</p>
+        
+        <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+            
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
     <script src="functions.js"></script>
 </body>
 </html>
