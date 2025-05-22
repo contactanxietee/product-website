@@ -31,7 +31,7 @@ section {
 }
 
 .hero {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
 }
 
@@ -44,26 +44,16 @@ section {
     text-transform: lowercase;
 }
 
-.hero .anx {
-    color: #888;
-}
-
-.hero .i {
-    color: #888;
-    position: relative;
-    display: inline-block;
-    font-family: 'Comic Sans MS', cursive;
-    transform: rotate(-5deg);
-    animation: wiggle 3s ease-in-out infinite;
+.hero .anxie {
+    background: -webkit-linear-gradient(#9b59b6, #663399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero .tee {
-    color: #bbb;
-}
-
-@keyframes wiggle {
-    0%, 100% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
+    background: -webkit-linear-gradient(#40e0d0, #008b8b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero h2 {
@@ -119,11 +109,26 @@ section {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .team-member:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #f0f0f0;
+    transition: border-color 0.3s ease;
+}
+
+.team-member:hover img {
+    border-color: #ddd;
 }
 
 .team-member h3 {
